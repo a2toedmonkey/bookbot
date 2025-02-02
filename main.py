@@ -44,9 +44,20 @@ def report():
     print("--- End report ---")
 
 def main():
-    #print(file_contents)
-   # wordcount()
-   # charactercount('no')
-   report()
+    go = True
+    
+    while(go):
+        cmd = input("Enter command: ")
+        match cmd:
+            case "read":
+                print(file_contents)
+            case "wordcount":
+                wordcount()
+            case "characters":
+                charactercount("print")
+            case "report":
+                report()
+            case "exit" | "q":
+                go=False;
 
 main()
